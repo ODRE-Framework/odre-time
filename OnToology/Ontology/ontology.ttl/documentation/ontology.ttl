@@ -1,0 +1,130 @@
+@prefix : <https://w3id.org/def/odre-time#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://w3id.org/def/odre-time#> .
+
+<https://w3id.org/def/odre-time> rdf:type owl:Ontology ;
+                                  <http://purl.org/dc/terms/creator> "Andrea Cimmino" ,
+                                                                     "Juan Cano de Benito" ,
+                                                                     "http://www.garcia-castro.com/foaf.rdf#me" ;
+                                  rdfs:label "ODRL Time Extension" ;
+                                  owl:versionInfo 1.0 .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/juanc/ontologies/2024/7/untitled-ontology-37/between
+<http://www.semanticweb.org/juanc/ontologies/2024/7/untitled-ontology-37/between> rdf:type owl:Class ;
+                                                                                  rdfs:subClassOf <http://www.w3.org/ns/odrl/2/Operator> ;
+                                                                                  rdfs:comment "A time given is between the Left Operand time and the Right Operand time" .
+
+
+###  http://www.semanticweb.org/juanc/ontologies/2024/7/untitled-ontology-37/time
+<http://www.semanticweb.org/juanc/ontologies/2024/7/untitled-ontology-37/time> rdf:type owl:Class ;
+                                                                               rdfs:subClassOf <http://www.w3.org/ns/odrl/2/LeftOperand> ,
+                                                                                               <http://www.w3.org/ns/odrl/2/RightOperand> .
+
+
+###  http://www.w3.org/2006/time#after
+<http://www.w3.org/2006/time#after> rdf:type owl:Class ;
+                                    rdfs:subClassOf <http://www.w3.org/ns/odrl/2/Operator> ;
+                                    rdfs:comment "Left Operand time is after Right Operand time" .
+
+
+###  http://www.w3.org/2006/time#before
+<http://www.w3.org/2006/time#before> rdf:type owl:Class ;
+                                     rdfs:subClassOf <http://www.w3.org/ns/odrl/2/Operator> ;
+                                     rdfs:comment "The time provided by the left operand side occurs before the time on the right operand side." .
+
+
+###  http://www.w3.org/2006/time#contains
+<http://www.w3.org/2006/time#contains> rdf:type owl:Class ;
+                                       rdfs:subClassOf <http://www.w3.org/ns/odrl/2/Operator> ;
+                                       rdfs:comment "The right operand event occurs entirely within the duration of the left operand event." .
+
+
+###  http://www.w3.org/2006/time#during
+<http://www.w3.org/2006/time#during> rdf:type owl:Class ;
+                                     rdfs:subClassOf <http://www.w3.org/ns/odrl/2/Operator> ;
+                                     rdfs:comment "The left operand event occurs entirely within the duration of the right operand event." .
+
+
+###  http://www.w3.org/2006/time#equals
+<http://www.w3.org/2006/time#equals> rdf:type owl:Class ;
+                                     rdfs:subClassOf <http://www.w3.org/ns/odrl/2/Operator> ;
+                                     rdfs:comment "The events on the left operand and right operand side have exactly the same duration and occur at the same time." .
+
+
+###  http://www.w3.org/2006/time#finished
+<http://www.w3.org/2006/time#finished> rdf:type owl:Class ;
+                                       rdfs:subClassOf <http://www.w3.org/ns/odrl/2/Operator> ;
+                                       rdfs:comment "The event on the left operand ends at exactly the same time as the event on the right operand." .
+
+
+###  http://www.w3.org/2006/time#finishedBy
+<http://www.w3.org/2006/time#finishedBy> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://www.w3.org/ns/odrl/2/Operator> ;
+                                         rdfs:comment "The event on the right operand ends at exactly the same time as the event on the left operand." .
+
+
+###  http://www.w3.org/2006/time#meets
+<http://www.w3.org/2006/time#meets> rdf:type owl:Class ;
+                                    rdfs:subClassOf <http://www.w3.org/ns/odrl/2/Operator> ;
+                                    rdfs:comment "The end of the event or object on the left operand coincides exactly with the start of the event on the right operand." .
+
+
+###  http://www.w3.org/2006/time#metBy
+<http://www.w3.org/2006/time#metBy> rdf:type owl:Class ;
+                                    rdfs:subClassOf <http://www.w3.org/ns/odrl/2/Operator> ;
+                                    rdfs:comment "The end of the event or object on the right operand coincides exactly with the start of the event on the left operand." .
+
+
+###  http://www.w3.org/2006/time#overlappedBy
+<http://www.w3.org/2006/time#overlappedBy> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://www.w3.org/ns/odrl/2/Operator> ;
+                                           rdfs:comment "The event on the right operand starts before the event on the left operand, but also ends before the event on the left operand ends." .
+
+
+###  http://www.w3.org/2006/time#overlaps
+<http://www.w3.org/2006/time#overlaps> rdf:type owl:Class ;
+                                       rdfs:subClassOf <http://www.w3.org/ns/odrl/2/Operator> ;
+                                       rdfs:comment "The event on the left operand starts before the event on the right operand, but also ends before the event on the right operand ends." .
+
+
+###  http://www.w3.org/2006/time#startedBy
+<http://www.w3.org/2006/time#startedBy> rdf:type owl:Class ;
+                                        rdfs:subClassOf <http://www.w3.org/ns/odrl/2/Operator> ;
+                                        rdfs:comment "The event on the right operand starts at exactly the same time as the event on the left operand." .
+
+
+###  http://www.w3.org/2006/time#starts
+<http://www.w3.org/2006/time#starts> rdf:type owl:Class ;
+                                     rdfs:subClassOf <http://www.w3.org/ns/odrl/2/Operator> ;
+                                     rdfs:comment "The event on the left operand starts at exactly the same time as the event on the right operand." .
+
+
+###  http://www.w3.org/ns/odrl/2/LeftOperand
+<http://www.w3.org/ns/odrl/2/LeftOperand> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/odrl/2/Operator
+<http://www.w3.org/ns/odrl/2/Operator> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/odrl/2/RightOperand
+<http://www.w3.org/ns/odrl/2/RightOperand> rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
